@@ -8,8 +8,7 @@ import platform.Foundation.NSHomeDirectory
 fun dataBaseProvider(): CurrencyDataBase{
     val dbFile = NSHomeDirectory() + "/currency.db"
     return Room.databaseBuilder<CurrencyDataBase>(
-        name = dbFile,
-        factory = { CurrencyDataBase::class.instantiateImpl()}
+        name = dbFile
     )
         .setDriver(BundledSQLiteDriver())
         .build()

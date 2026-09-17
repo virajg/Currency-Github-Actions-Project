@@ -23,8 +23,8 @@ fun getLocalProperty(name: String): String {
 }
 
 val currencyExchangeApiKey: String = getLocalProperty("API_KEY")
-    .takeIf { it.isNotEmpty() }
-    ?: throw GradleException("Register your API key from developer and place it in local.properties as `API_KEY`")
+    .ifEmpty { System.getenv("API_KEY") ?: "" }
+    .ifEmpty { "YOUR_API_KEY_HERE" }
 
 kotlin {
     androidTarget {

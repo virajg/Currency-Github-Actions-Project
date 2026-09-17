@@ -11,13 +11,12 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import kotlinx.datetime.Clock
-import org.example.cmp.domain.utils.ApiResult
 import org.example.cmp.data.local.database.CurrencyDao
-import org.example.cmp.domain.repository.Preferences
 import org.example.cmp.domain.model.CurrencyData
 import org.example.cmp.domain.model.RateStatus
+import org.example.cmp.domain.repository.Preferences
 import org.example.cmp.domain.usecase.GetLatestExchangeRatesUseCase
+import org.example.cmp.domain.utils.ApiResult
 import kotlin.time.ExperimentalTime
 
 sealed class HomeUiEvent{
